@@ -5,11 +5,87 @@
     <title>ToDo-list</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
 
-
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
     <script src="app.js"></script>
+    <script>
+        $(function () {
+            $("#datetimepicker").datetimepicker({
+                format: 'd.m.Y H:i:s'
+            });
+        });
+    </script>
+
+
 </head>
+
 <body>
+<div>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand">ToDo-list</a>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+</div>
+
+<table class="table" style="width: 50%">
+    <thead>
+    <tr>
+        <th>Status</th>
+        <th>Text</th>
+        <th>Deadline</th>
+        <th>Link</th>
+    </tr>
+    </thead>
+    <tbody id="tableBody">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    </tbody>
+
+</table>
+
+
+<div class="col-md-3 ">
+    <div class="form-group well well-sm">
+        <div class="radio">
+            <label for="radioBtn1">
+                <input type="radio" id="radioBtn1" name="optionsRadios" value="rad1">
+                Open
+            </label>
+        </div>
+        <div class="radio">
+            <label for="radioBtn2">
+                <input type="radio" id="radioBtn2" name="optionsRadios" value="rad2" checked>
+                Close
+            </label>
+        </div>
+    </div>
+
+    <textarea class="form-control" rows="3" id="textArea"></textarea>
+
+    <div class="form-group well well-sm">
+        <label for="datetimepicker">Deadline</label>
+        <input type="text" class="form-control" id="datetimepicker">
+    </div>
+
+    <!--<input class="btn btn-default" type="submit" value="Submit">-->
+    <button id="" class="btn btn-default" onclick="saveData()">Add</button>
+</div>
 
 </body>
+
 </html>
