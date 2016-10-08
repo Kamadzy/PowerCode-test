@@ -1,9 +1,10 @@
 $(document).ready(function(){
     var tasks = localStorage['dLine'] ? JSON.parse(localStorage.dLine) : [];
+    var tableBody = $("#tableBody");
     function openData(){
-        $("#tableBody").empty();
+        tableBody.empty();
         for (var i=0; i<tasks.length; i++){
-            $( "#tableBody" ).append( "<tr> <td>"+tasks[i].status+"</td> <td>"+tasks[i].text+"</td> <td>"+tasks[i].date+"</td> <td><button data-id=\""+i+"\" class=\"deleteButton\">Delete Item</button></td> </tr>" );
+            tableBody.append( "<tr> <td>"+tasks[i].status+"</td> <td>"+tasks[i].text+"</td> <td>"+tasks[i].date+"</td> <td><button data-id=\""+i+"\" class=\"deleteButton\">Delete Item</button></td> </tr>" );
         }
     }
 
@@ -30,7 +31,7 @@ $(document).ready(function(){
         localStorage.setItem("dLine", JSON.stringify(tasks));
         openData();
     }
-    $("#tableBody").on("click",".deleteButton", function(){
+    tableBody.on("click",".deleteButton", function(){
         deleteItem($(this).data("id"));
     });
     $("#saveButton").click(function(){
@@ -40,24 +41,19 @@ $(document).ready(function(){
     $.tablesorter.addParser({
         id: "deadLine",
         is: function(s) {
-            //return false;
-            //use the above line if you don't want table sorter to auto detected this parser
-            //21/04/2010 03:54 is the used date/time format
+
             return /\d{1,2}\.\d{1,2}\.\d{1,4} \d{1,2}:\d{1,2}:\d{1,2}/.test(s);
 
         },
         format: function(s) {
-            console.log(s);
             s = s.replace(/\-/g," ");
             s = s.replace(/:/g," ");
             s = s.replace(/\./g," ");
             s = s.replace(/\//g," ");
             s = s.split(" ");
-            console.log(s);
             return $.tablesorter.formatFloat(new Date(s[2], s[1]-1, s[0], s[3], s[4]).getTime());
         },
         type: "numeric"} );
-
 
         $(".table").tablesorter({
             headers: {
@@ -66,7 +62,5 @@ $(document).ready(function(){
                 }
             }
         });
-
-
 
 });
