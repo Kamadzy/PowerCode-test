@@ -1,15 +1,16 @@
 table.table {
 	font-size: 12px;
-
-	width: 1024px;
+	width: 50%;
 	border: 1px solid #000;
+	margin: auto;
+
 }
 table.table th {
 	text-align: left;
 	padding: 5px;
 }
 table.table .header {
-	background-image: url(bg.png);
+	background-image: url(../img/bg.png);
 	background-repeat: no-repeat;
 	border-left: 1px solid #FFF;
 	border-right: 1px solid #000;
@@ -19,10 +20,10 @@ table.table .header {
 	height: auto;
 }
 table.table .headerSortUp {
-	background-image: url(asc.png);
+	background-image: url(../img/asc.png);
 	background-repeat: no-repeat;
 }
 table.table .headerSortDown {
-	background-image: url(desc.png);
+	background-image: url(../img/desc.png);
 	background-repeat: no-repeat;
 }
