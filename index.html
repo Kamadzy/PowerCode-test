@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="css/style.css">
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="js/jquery.datetimepicker.full.min.js"></script>
-    <script src="app.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.datetimepicker.full.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <script>
         $(function () {
             $("#datetimepicker").datetimepicker({
                 format: 'd.m.Y H:i:s'
             });
         });
+
+
     </script>
 
 
@@ -48,12 +52,7 @@
     </tr>
     </thead>
     <tbody id="tableBody">
-    <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-    </tr>
+
     </tbody>
 
 </table>
@@ -63,13 +62,13 @@
     <div class="form-group well well-sm">
         <div class="radio">
             <label for="radioBtn1">
-                <input type="radio" id="radioBtn1" name="optionsRadios" value="rad1">
+                <input type="radio" id="radioBtn1" name="optionsRadios" value="Open">
                 Open
             </label>
         </div>
         <div class="radio">
             <label for="radioBtn2">
-                <input type="radio" id="radioBtn2" name="optionsRadios" value="rad2" checked>
+                <input type="radio" id="radioBtn2" name="optionsRadios" value="Close" checked>
                 Close
             </label>
         </div>
@@ -83,7 +82,7 @@
     </div>
 
     <!--<input class="btn btn-default" type="submit" value="Submit">-->
-    <button id="" class="btn btn-default" onclick="saveData()">Add</button>
+    <button id="saveButton" class="btn btn-default">Add</button>
 </div>
 
 </body>
